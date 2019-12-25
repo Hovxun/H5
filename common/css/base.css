@@ -1,0 +1,89 @@
+html,
+body {
+    user-select: none;
+    /* font-size: 13.333333vw; */
+    /* font-family: "microsoft yahei", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+}
+
+/* body, a, p, i, h1, h2, h3, h4, h5 {
+	font-family: "microsoft yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+} */
+
+html,
+body,
+div,
+section,
+ul,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+figure,
+button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited,
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    -webkit-touch-callout: none;
+    pointer-events: none;
+}
+
+textarea,
+input {
+    outline: 0;
+    border: none;
+}
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+    color: #999;
+}
+textarea::-moz-placeholder,
+input::-moz-placeholder {
+    color: #999;
+}
+textarea::-ms-input-placeholder,
+input::-ms-input-placeholder {
+    color: #999;
+}
+
+button {
+    display: block;
+    border: none;
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    color: transparent;
+    background: transparent;
+}
+
+/************/
+.hidden {
+    display: none !important;
+}
