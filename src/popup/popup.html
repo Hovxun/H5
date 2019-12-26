@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>弹出层 Popup</title>
+        <link rel="stylesheet" href="./core/popup.css" />
+        <style>
+            .popup {
+                display: none;
+            }
+            .popup-content {
+                padding: 20px;
+                text-align: center;
+                background: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <p><button class="centerBtn">居中弹出</button></p>
+            </li>
+            <li>
+                <p><button class="topBtn">顶部弹出</button></p>
+            </li>
+            <li>
+                <p><button class="bottomBtn">底部弹出</button></p>
+            </li>
+            <li>
+                <p><button class="leftBtn">左侧弹出</button></p>
+            </li>
+            <li>
+                <p><button class="rightBtn">右侧弹出</button></p>
+            </li>
+        </ul>
+        <!-- 居中弹窗 -->
+        <div class="popup popup-center">
+            <div class="popup-content center">
+                Center
+            </div>
+        </div>
+        <!-- 顶部弹窗 -->
+        <div class="popup popup-top">
+            <div class="popup-content top">
+                Top
+            </div>
+        </div>
+        <!-- 底部弹窗 -->
+        <div class="popup popup-bottom">
+            <div class="popup-content bottom">
+                Bottom
+            </div>
+        </div>
+        <!-- 左侧弹窗 -->
+        <div class="popup popup-left">
+            <div class="popup-content left">
+                Left
+            </div>
+        </div>
+        <!-- 右侧弹窗 -->
+        <div class="popup popup-right">
+            <div class="popup-content right">
+                Right
+            </div>
+        </div>
+    </body>
+    <script src="./core/popup.js"></script>
+    <script>
+        window.onload = function() {
+            // 居中弹出
+            let centerPopup = new Popup(".popup-center", {
+                onMask: true
+            });
+            let centerBtn = document.querySelector(".centerBtn");
+            centerBtn.onclick = function() {
+                centerPopup.show();
+            };
+            // 顶部弹出
+            let topPopup = new Popup(".popup-top", {
+                onMask: true
+            });
+            let topBtn = document.querySelector(".topBtn");
+            topBtn.onclick = function() {
+                topPopup.show();
+            };
+            // 底部弹出
+            let bottomPopup = new Popup(".popup-bottom", {
+                onMask: true
+            });
+            let bottomBtn = document.querySelector(".bottomBtn");
+            bottomBtn.onclick = function() {
+                bottomPopup.show();
+            };
+            // 左侧弹出
+            let leftPopup = new Popup(".popup-left", {
+                onMask: true
+            });
+            let leftBtn = document.querySelector(".leftBtn");
+            leftBtn.onclick = function() {
+                leftPopup.show();
+            };
+            // 右侧弹出
+            let rightPopup = new Popup(".popup-right", {
+                onMask: true
+            });
+            let rightBtn = document.querySelector(".rightBtn");
+            rightBtn.onclick = function() {
+                rightPopup.show();
+            };
+        };
+    </script>
+</html>
