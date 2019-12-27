@@ -4,6 +4,7 @@
 H5/                           // 原生 JS
 |-- src/                      // 模块目录
 |   |-- popup/                // 弹出层 Popup
+|   |-- hint/                 // 提示对话框 hint
 |-- static/                   // 静态资源
 |   |-- images/               // 图片
 |   |-- img-icon/             // 图片图标

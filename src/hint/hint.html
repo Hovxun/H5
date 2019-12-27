@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>提示对话框 hint</title>
+        <link rel="stylesheet" href="./core/hint.css" />
+    </head>
+    <body>
+        <ul>
+            <li>
+                <h4>Loading</h4>
+                <p>
+                    <button class="showLoadingBtn">
+                        show
+                    </button>
+                    <button class="showLoadingTextBtn">
+                        show text
+                    </button>
+                </p>
+                <p>
+                    <button class="hideLoadingBtn">
+                        hide
+                    </button>
+                </p>
+            </li>
+            <li>
+                <h4>Toast</h4>
+                <p>
+                    <button class="showToastBtn">
+                        show
+                    </button>
+                    <button class="showToastLoadingBtn">
+                        show loading
+                    </button>
+                    <button class="showToastSuccessBtn">
+                        show success
+                    </button>
+                </p>
+                <button class="hideToastBtn">
+                    hide
+                </button>
+            </li>
+            <li>
+                <h4>Modal</h4>
+                <p>
+                    <button class="showModalBtn">
+                        show
+                    </button>
+                    <button class="showCancelModalBtn">
+                        show cancel
+                    </button>
+                </p>
+            </li>
+        </ul>
+        <script src="./core/hint.js"></script>
+        <script>
+            window.onload = function() {
+                // Loading
+                let showLoadingBtn = document.querySelector(".showLoadingBtn");
+                showLoadingBtn.onclick = function() {
+                    hint.showLoading();
+                };
+                let showLoadingTextBtn = document.querySelector(".showLoadingTextBtn");
+                showLoadingTextBtn.onclick = function() {
+                    hint.showLoading("加载中...");
+                };
+                let hideLoadingBtn = document.querySelector(".hideLoadingBtn");
+                hideLoadingBtn.onclick = function() {
+                    hint.hideLoading();
+                };
+                // Toast
+                let showToastBtn = document.querySelector(".showToastBtn");
+                showToastBtn.onclick = function() {
+                    hint.showToast("提示信息");
+                };
+                let showToastLoadingBtn = document.querySelector(".showToastLoadingBtn");
+                showToastLoadingBtn.onclick = function() {
+                    hint.showToast({
+                        message: "加载中...",
+                        icon: "loading"
+                    });
+                };
+                let showToastSuccessBtn = document.querySelector(".showToastSuccessBtn");
+                showToastSuccessBtn.onclick = function() {
+                    hint.showToast({
+                        icon: "success"
+                    });
+                };
+                let hideToastBtn = document.querySelector(".hideToastBtn");
+                hideToastBtn.onclick = function() {
+                    hint.hideToast();
+                };
+                // Modal
+                let showModalBtn = document.querySelector(".showModalBtn");
+                showModalBtn.onclick = function() {
+                    hint.showModal({
+                        message: "江山如此多娇，引无数英雄竞折腰。",
+                        showCancel: false,
+                        onConfirm: function() {
+                            console.log("沁园春·雪=>点击了确定");
+                        }
+                    });
+                };
+                // Modal
+                let showCancelModalBtn = document.querySelector(".showCancelModalBtn");
+                showCancelModalBtn.onclick = function() {
+                    hint.showModal({
+                        title: "短歌行",
+                        message: "对酒当歌，人生几何！譬如朝露，去日苦多。",
+                        confirmText: "确定",
+                        cancelText: "取消",
+                        onConfirm: function() {
+                            console.log("短歌行=>点击了确定");
+                        },
+                        onCancel: function() {
+                            console.log("短歌行=>点击了取消");
+                        }
+                    });
+                };
+            };
+        </script>
+    </body>
+</html>
