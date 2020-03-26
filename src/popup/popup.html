@@ -7,7 +7,7 @@
         <title>弹出层 Popup</title>
         <link rel="stylesheet" href="./core/popup.css" />
         <style>
-            .popup {
+            .wrapper {
                 display: none;
             }
             .popup-content {
@@ -36,32 +36,32 @@
             </li>
         </ul>
         <!-- 居中弹窗 -->
-        <div class="popup popup-center">
-            <div class="popup-content center">
+        <div class="wrapper popup-center">
+            <div class="popup-content top">
                 Center
             </div>
         </div>
         <!-- 顶部弹窗 -->
-        <div class="popup popup-top">
-            <div class="popup-content top">
+        <div class="wrapper popup-top">
+            <div class="popup-content">
                 Top
             </div>
         </div>
         <!-- 底部弹窗 -->
-        <div class="popup popup-bottom">
-            <div class="popup-content bottom">
+        <div class="wrapper popup-bottom">
+            <div class="popup-content">
                 Bottom
             </div>
         </div>
         <!-- 左侧弹窗 -->
-        <div class="popup popup-left">
-            <div class="popup-content left">
+        <div class="wrapper popup-left">
+            <div class="popup-content">
                 Left
             </div>
         </div>
         <!-- 右侧弹窗 -->
-        <div class="popup popup-right">
-            <div class="popup-content right">
+        <div class="wrapper popup-right">
+            <div class="popup-content">
                 Right
             </div>
         </div>
@@ -71,7 +71,7 @@
         window.onload = function() {
             // 居中弹出
             let centerPopup = new Popup(".popup-center", {
-                onMask: true
+                closeOnMask: true
             });
             let centerBtn = document.querySelector(".centerBtn");
             centerBtn.onclick = function() {
@@ -79,7 +79,8 @@
             };
             // 顶部弹出
             let topPopup = new Popup(".popup-top", {
-                onMask: true
+                position: "top",
+                closeOnMask: true
             });
             let topBtn = document.querySelector(".topBtn");
             topBtn.onclick = function() {
@@ -87,7 +88,8 @@
             };
             // 底部弹出
             let bottomPopup = new Popup(".popup-bottom", {
-                onMask: true
+                position: "bottom",
+                closeOnMask: true
             });
             let bottomBtn = document.querySelector(".bottomBtn");
             bottomBtn.onclick = function() {
@@ -95,7 +97,8 @@
             };
             // 左侧弹出
             let leftPopup = new Popup(".popup-left", {
-                onMask: true
+                position: "left",
+                closeOnMask: true
             });
             let leftBtn = document.querySelector(".leftBtn");
             leftBtn.onclick = function() {
@@ -103,7 +106,8 @@
             };
             // 右侧弹出
             let rightPopup = new Popup(".popup-right", {
-                onMask: true
+                position: "right",
+                closeOnMask: true
             });
             let rightBtn = document.querySelector(".rightBtn");
             rightBtn.onclick = function() {
